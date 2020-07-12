@@ -12,7 +12,7 @@ import {
 
 
 const PostItem = (props) => {
-    return (<div className="post-item" onClick={ () => props.onClickHandler(props.post.ID) }>
+    return (<div className={`post-item ${props.customClass}`} onClick={ () => props.onClickHandler(props.post.ID) }>
         <div className="post_item__thum">
             <img src={props.post.post_thumbnail ? props.post.post_thumbnail.URL : defaultThumbnail} alt="thumbnai" />
         </div>

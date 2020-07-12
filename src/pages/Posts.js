@@ -87,7 +87,7 @@ class Posts extends Component {
         if(posts.length > 0) {
             view = posts.map(post => {
                 return (<div key={post.ID}>
-                    <PostItem post={ post } onClickHandler={ this.onClickHandler } />
+                    <PostItem post={ post } onClickHandler={ this.onClickHandler } customClass="listing"/>
                 </div>);
             });    
         }

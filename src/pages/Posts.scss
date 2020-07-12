@@ -1,3 +1,15 @@
+.post {
+    display: flex;
+    padding: 24px;
+    &__content {
+        flex: 3;
+    }
+
+    &__meta {
+        flex: 1;
+    }
+}
+
 .posts {
     &__list {
         margin: 0 auto;

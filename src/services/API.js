@@ -10,7 +10,7 @@ class APIService {
         axios.get(API_ENDPOINT, params, sucessCb, errorCb);
     }
 
-    getBlog = (id, sucessCb, errorCb) => {
+    getPost = (id, sucessCb, errorCb) => {
         axios.get(`${API_ENDPOINT}/${id}`, {}, sucessCb, errorCb);
     }
 
