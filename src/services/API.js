@@ -6,8 +6,8 @@ import {
 
 class APIService {
     
-    getBlogs = (sucessCb, errorCb) => {
-        axios.get(API_ENDPOINT, {}, sucessCb, errorCb);
+    getPosts = (params = {}, sucessCb, errorCb) => {
+        axios.get(API_ENDPOINT, params, sucessCb, errorCb);
     }
 
     getBlog = (id, sucessCb, errorCb) => {

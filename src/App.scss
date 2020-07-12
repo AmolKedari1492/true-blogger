@@ -1,0 +1,20 @@
+.app {
+    &__header {
+        border-bottom: 3px solid #E8E8E8;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 1.2;
+        padding: 24px;
+        text-align: center;
+    }
+
+    &__footer {
+        border-top: 3px solid #E8E8E8;
+        text-align: center;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 1.2;
+        padding: 24px;
+    }
+}

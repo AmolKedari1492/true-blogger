@@ -1,0 +1,56 @@
+.post-item {
+    cursor: pointer;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    display: flex;
+    margin: 24px;
+    padding: 24px;
+
+    &:hover {
+        position: relative;
+        top: 2px;
+        box-shadow: 2px 2px blue;  
+    }
+
+    img {
+        border-radius: 50%;
+        display: inline-block;
+        height: 72px;
+        margin-right: 24px;
+        width: 72px;
+    }
+
+    &__thum {
+    }
+
+    &__content {
+
+    }
+
+    &__title {
+        font-size: 21px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: 0;
+        margin-bottom: 4px;
+    }
+
+    &__excerpt {
+        font-size: 16px;
+        font-family: cursive;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    &__date {
+        font-size: 13px;
+        font-family: cursive;
+        line-height: 1.2;
+        font-weight: 500;        
+    }
+
+    &__sub-content{
+
+    }
+}

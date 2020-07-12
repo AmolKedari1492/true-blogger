@@ -1,0 +1,23 @@
+.posts {
+    &__list {
+        margin: 0 auto;
+        max-width: 940px;
+    }
+
+    &__section {
+        min-height: 50vh;
+    }
+
+    &__actions {
+        margin: 0 auto;
+        min-width: 100px;
+        max-width: 250px;
+        font-size: 21px;
+        color: blue;
+        text-decoration: underline;
+        font-family: cursive;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
