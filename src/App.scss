@@ -1,3 +1,5 @@
+@import "./scss//variable.scss";
+
 .app {
     &__header {
         border-bottom: 3px solid #E8E8E8;
@@ -20,5 +22,13 @@
 
     &__section {
         min-height: 75vh;
+    }
+
+    @media all and (max-width: $medium_size+'px') {
+        &__header,
+        &__footer {
+            padding: 10px;
+            font-size: 19px;
+        }
     }
 }
