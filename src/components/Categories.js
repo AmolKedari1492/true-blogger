@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import "./list.scss";
 
 import {
@@ -28,3 +30,8 @@ const Categories = (props) => {
 };
 
 export default Categories;
+
+Categories.propTypes = {
+    categories: PropTypes.object,
+    history: PropTypes.object
+}

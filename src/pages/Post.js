@@ -79,6 +79,8 @@ class Post extends Component {
         });
     }
 
+    noop = () => {}
+
     render() {
         let { post } = this.state;
         if (!post) {
@@ -91,13 +93,13 @@ class Post extends Component {
 
         return (<div className="post">
             <div className="post__content">
-                <PostItem post={post} customClass="" />
+                <PostItem onClickHandler={ this.noop } post={post} customClass="" />
                 <PostContent content={post.content} />
             </div>
             <div  className="post__meta">
                 <Categories categories={post.categories} history={this.props.history} />
                 <Tags tags={post.tags} history={this.props.history} />
-                <RelatedPost history={this.props.history}/>
+                <RelatedPost history={this.props.history} id={post.id} />
             </div>
         </div>);
     }

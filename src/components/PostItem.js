@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import "./PostItem.scss";
 
 import {
@@ -25,3 +27,9 @@ const PostItem = (props) => {
 };
 
 export default PostItem;
+
+PostItem.propTypes = {
+    customClass: PropTypes.string,
+    onClickHandler: PropTypes.func,
+    post: PropTypes.object
+};

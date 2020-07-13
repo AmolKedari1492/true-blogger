@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import APIService from "../services/API"
 
 import "./list.scss";
@@ -8,15 +10,15 @@ import {
 } from "../constants"
 
 const RelatedPost = (props) => {
-    const [posts, setPost] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const fetchPosts = () => {
             APIService.getRelatedPost(props.id, (result) => {
-                setPost(result.hits);
+                setPosts(result.hits);
             }, (error) => {
                 console.log(error);
-                setPost([]);
+                setPosts([]);
             })
         }
 
@@ -43,3 +45,8 @@ const RelatedPost = (props) => {
 };
 
 export default RelatedPost;
+
+RelatedPost.propTypes = {
+    id: PropTypes.string,
+    history: PropTypes.object
+};

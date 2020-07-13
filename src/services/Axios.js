@@ -4,8 +4,6 @@ import {
     BASE_URL,
 } from "../constants/";
 
-let responseBackup = null;
-
 class AxiosService {
     get = async (url, params = {}, successCb, errorCb) => {
         try {
@@ -20,7 +18,6 @@ class AxiosService {
                 baseURL: BASE_URL
             });
             if (resp.status === 200) {
-                responseBackup = resp.data;
                 successCb(resp.data);
             } else {
                 errorCb(resp);

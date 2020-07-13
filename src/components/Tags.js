@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import "./list.scss";
 
 import {
@@ -13,7 +15,7 @@ const Tags = (props) => {
         props.history.push(`${ROUTES.POSTS}?tags=${id}`);
     }
 
-    if (items.length == 0) {
+    if (items.length === 0) {
         return null;
     } else {
         return (<div className="list">
@@ -29,3 +31,8 @@ const Tags = (props) => {
 };
 
 export default Tags;
+
+Tags.propTypes = {
+    tags: PropTypes.object,
+    history: PropTypes.object
+};
