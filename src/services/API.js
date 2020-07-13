@@ -1,7 +1,8 @@
 import axios from "./Axios";
 
 import {
-    API_ENDPOINT
+    API_ENDPOINT,
+    RELATED_POST_API_ENDPOINT
 } from "../constants/";
 
 class APIService {
@@ -12,6 +13,10 @@ class APIService {
 
     getPost = (id, sucessCb, errorCb) => {
         axios.get(`${API_ENDPOINT}/${id}`, {}, sucessCb, errorCb);
+    }
+
+    getRelatedPost = (id, sucessCb, errorCb) => {
+        axios.get(`${API_ENDPOINT}/${id}/${RELATED_POST_API_ENDPOINT}`, {}, sucessCb, errorCb);
     }
 
 };

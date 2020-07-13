@@ -5,6 +5,9 @@ import PostItem from "../components/PostItem";
 import PostContent from "../components/PostContent";
 import Tags from "../components/Tags";
 import Categories from "../components/Categories";
+import RelatedPost from "../components/RelatedPost";
+import EmptyContent from "../components/EmptyContent";
+
 
 import APIService from "../services/API";
 
@@ -21,6 +24,24 @@ class Post extends Component {
             this.fetchPost(this.props.match.params.id);
         }
     }
+
+    static getDerivedStateFromProps(newProps, preState) {
+        if(newProps.match.params.id && preState.post && newProps.match.params.id !== preState.post.id) {
+            let post = preState.post;
+            post.id = newProps.match.params.id;
+            return {
+                post
+            }
+        }
+
+        return null;
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.match && prevProps.match && this.props.match.params.id !== prevProps.match.params.id) {
+          this.fetchPost(this.props.match.params.id);
+        }
+      }
 
     fetchPost = (id) => {
         APIService.getPost(id, (resp) => {
@@ -39,6 +60,7 @@ class Post extends Component {
 
             this.setState({
                 post: {
+                    id,
                     author,
                     categories,
                     content,
@@ -62,6 +84,11 @@ class Post extends Component {
         if (!post) {
             return null;
         }
+
+        if(post && post.length === 0) {
+            return <EmptyContent />
+        }
+
         return (<div className="post">
             <div className="post__content">
                 <PostItem post={post} customClass="" />
@@ -70,6 +97,7 @@ class Post extends Component {
             <div  className="post__meta">
                 <Categories categories={post.categories} history={this.props.history} />
                 <Tags tags={post.tags} history={this.props.history} />
+                <RelatedPost history={this.props.history}/>
             </div>
         </div>);
     }

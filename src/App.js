@@ -13,7 +13,7 @@ import {
 function App() {
   return (
     <div className="app">
-      <header className="app__header">TrueBlogger</header>
+      <header className="app__header"><a href="/">TrueBlogger</a></header>
       <section className="app__section">
         <Switch>
           <Route exact path={ ROUTES.BASE } component={ Posts }></Route>

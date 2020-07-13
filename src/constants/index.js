@@ -1,6 +1,7 @@
 export const BASE_URL = "https://akedari-dummy-api.herokuapp.com/"; 
 
 export const API_ENDPOINT = "/api/fake/trueblogs"; 
+export const RELATED_POST_API_ENDPOINT = "related"; 
 
 export const defaultThumbnail = "https://en-blog.files.wordpress.com/2020/06/en.blog-short.jpg";
 

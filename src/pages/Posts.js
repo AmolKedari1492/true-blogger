@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import "./Posts.scss"
+import "./Posts.scss";
+import "../scss/base.scss";
+
 import PostItem from "../components/PostItem";
+import EmptyContent from "../components/EmptyContent";
 
 import APIService from "../services/API";
 
@@ -58,7 +61,8 @@ class Posts extends Component {
             posts = [].concat(posts, newPosts)
             this.setState({
                 posts,
-                total
+                total,
+                APIFinished: true
             });
         }, (error) => {
             console.error(error);
@@ -96,7 +100,16 @@ class Posts extends Component {
     }
 
     render() {
-        let { posts, total, params } = this.state;
+        let { posts, total, params, APIFinished } = this.state;
+
+        if(!APIFinished) {
+            return <h2 className="align-center">Loading...</h2>
+        }
+
+        if(posts && posts.length === 0 && APIFinished) {
+            return <EmptyContent />
+        }
+
         return(<div className="posts">
             <div className="posts__header"></div>
             <div className="posts__list">
